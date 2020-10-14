@@ -31,17 +31,16 @@ Widget personAppBar(context) {
       ],
     ),
     actions: <Widget>[
-      IconButton(
-        onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => PersonSettingScreen()),
-          );
-        },
-        icon: Icon(
-          Icons.dehaze,
-          size: 30.0,
-          color: KBlackColor,
+      Builder(
+        builder: (context) =>  IconButton(
+          onPressed: () {
+            Scaffold.of(context).openEndDrawer();
+          },
+          icon: Icon(
+            Icons.dehaze,
+            size: 30.0,
+            color: KBlackColor,
+          ),
         ),
       ),
     ],

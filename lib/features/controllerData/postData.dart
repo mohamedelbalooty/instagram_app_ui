@@ -10,7 +10,7 @@ class PostData{
       commentsNumbers: 2,
       comments: [
         'Beautiful',
-        'Great day my friend'
+        'Great day my friend',
       ],
     ),
     Post(
@@ -75,6 +75,7 @@ class PostData{
       likeNumbers: 50,
       commentsNumbers: 4,
       comments: [
+        'Great jop'
         'Beautiful',
         'Great day my friend'
       ],
@@ -87,7 +88,8 @@ class PostData{
       commentsNumbers: 8,
       comments: [
         'Great jop',
-        'Hello friend'
+        'Hello friend',
+        'Great jop'
       ],
     ),
     Post(
@@ -98,6 +100,7 @@ class PostData{
       commentsNumbers: 13,
       comments: [
         'Great day my friend',
+        'Great jop',
         'Great jop'
       ],
     ),
@@ -163,6 +166,8 @@ class PostData{
       likeNumbers: 4,
       commentsNumbers: 7,
       comments: [
+        'Hello friend',
+        'Great jop',
         'Beautiful',
         'Great day my friend'
       ],

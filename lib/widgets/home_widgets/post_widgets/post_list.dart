@@ -42,7 +42,7 @@ class PostList extends StatelessWidget {
       children: <Widget>[
         PostBar(index: index),
         postImage(height, width, _profileDataList[index].postImage),
-        PostIconBar(),
+        PostIconBar(index: index,),
         postLikeAndComment(
             _postDataList[index].likeNumbers.toString(),
             _postDataList[index].comments[0],

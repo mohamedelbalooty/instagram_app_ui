@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:instagram/constants.dart';
-
 import 'setting_screen.dart';
 
 class PersonSettingScreen extends StatelessWidget {

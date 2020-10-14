@@ -1,9 +1,13 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:instagram/constants.dart';
+import 'package:instagram/screens/login/login_screen.dart';
 
 class SettingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    double height = MediaQuery.of(context).size.height;
+    double width = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: KWhiteColor,
@@ -109,12 +113,17 @@ class SettingScreen extends StatelessWidget {
               SizedBox(
                 height: 20.0,
               ),
-              Text(
-                'Log Out',
-                style: TextStyle(
-                  fontSize: 17.0,
-                  fontWeight: FontWeight.w400,
-                  color: Colors.blue,
+              GestureDetector(
+                onTap: () {
+                  customShowAlertDialog(context, height, width);
+                },
+                child: Text(
+                  'Log Out',
+                  style: TextStyle(
+                    fontSize: 17.0,
+                    fontWeight: FontWeight.w400,
+                    color: Colors.blue,
+                  ),
                 ),
               ),
               Container(
@@ -143,7 +152,9 @@ class SettingScreen extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(height: 50.0,),
+              SizedBox(
+                height: 50.0,
+              ),
             ],
           ),
         ),
@@ -175,6 +186,80 @@ class SettingScreen extends StatelessWidget {
           ),
         ],
       ),
+    );
+  }
+
+  customShowAlertDialog(context, height, width) async {
+    AlertDialog alertDialog = AlertDialog(
+      shape: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(5.0),
+      ),
+      title: Center(
+        child: Text(
+          'Log out of Instagram?',
+          style: TextStyle(
+            fontSize: 20.0,
+            fontWeight: FontWeight.w500,
+            color: KBlackColor,
+          ),
+        ),
+      ),
+      content: Container(
+        height: height * 0.15,
+        width: width,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.end,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: <Widget>[
+            Container(
+              height: 50.0,
+              width: width,
+              decoration: BoxDecoration(
+                border: Border(
+                  top: BorderSide(color: KGreyColor, width: 0.5),
+                  bottom: BorderSide(color: KGreyColor, width: 0.5),
+                ),
+              ),
+              child: Center(
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.pushReplacementNamed(context, LoginScreen.id);
+                  },
+                  child: Text(
+                    'Log Out',
+                    style: TextStyle(
+                      fontSize: 16.0,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.blue,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 15,
+            ),
+            GestureDetector(
+              onTap: () {
+                Navigator.pop(context);
+              },
+              child: Text(
+                'Cancel',
+                style: TextStyle(
+                  fontSize: 16.0,
+                  color: KBlackColor,
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+    await showDialog(
+      context: context,
+      builder: (context) {
+        return alertDialog;
+      },
     );
   }
 }

@@ -6,12 +6,13 @@ import 'package:instagram/screens/person/person_screen.dart';
 import 'package:instagram/screens/search/search_screen.dart';
 import 'package:instagram/widgets/shared_bottomNavigationBar.dart';
 
-class Home extends StatefulWidget {
+class HomeView extends StatefulWidget {
+  static String id = 'HomeView';
   @override
-  _HomeState createState() => _HomeState();
+  _HomeViewState createState() => _HomeViewState();
 }
 
-class _HomeState extends State<Home> {
+class _HomeViewState extends State<HomeView> {
   PageController _pageController = PageController();
   List<Widget> _screens = [
     HomeScreen(),

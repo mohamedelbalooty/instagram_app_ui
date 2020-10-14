@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:instagram/features/models/posts.dart';
+import 'package:instagram/features/models/profile.dart';
+import 'package:instagram/screens/home/comment_page.dart';
 
 class PostIconBar extends StatefulWidget {
+
+  int index;
+  PostIconBar({this.index});
   @override
   _PostIconBarState createState() => _PostIconBarState();
 }
@@ -34,10 +40,15 @@ class _PostIconBarState extends State<PostIconBar> {
           SizedBox(
             width: 8.0,
           ),
-          Image.asset(
-            'assets/images/icons/comment.png',
-            height: 22.0,
-            width: 22.0,
+          InkWell(
+            onTap: (){
+              Navigator.pushNamed(context, CommentPage.id, arguments: widget.index);
+            },
+            child: Image.asset(
+              'assets/images/icons/comment.png',
+              height: 22.0,
+              width: 22.0,
+            ),
           ),
           SizedBox(
             width: 13.0,

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:instagram/screens/home/home.dart';
+import 'package:instagram/screens/home/homeView.dart';
 import '../../../constants.dart';
 
 Widget customButton(double width, String title, context) {
@@ -8,7 +8,7 @@ Widget customButton(double width, String title, context) {
       Navigator.pushReplacement(
           context,
           MaterialPageRoute(
-            builder: (context) => Home(),
+            builder: (context) => HomeView(),
           ));
     },
     child: Container(

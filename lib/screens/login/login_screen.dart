@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:instagram/screens/home/homeView.dart';
 import 'package:instagram/widgets/authentication_widgets/shared_authWidgets/custom_bottomNavigationBar.dart';
 import 'package:instagram/widgets/authentication_widgets/shared_authWidgets/custom_button.dart';
 import 'package:instagram/widgets/authentication_widgets/login_customWidgets/custom_loginDivider.dart';
@@ -44,7 +45,12 @@ class LoginScreen extends StatelessWidget {
               loginDetails(10.0, 'Forgot your login details?',
                   'Get help logging in.', context, LoginHelpScreen.id),
               customLoginDivider(width),
-              facebookLogin(),
+              GestureDetector(
+                onTap: (){
+                  Navigator.pushReplacementNamed(context, HomeView.id);
+                },
+                child: facebookLogin(),
+              ),
             ],
           ),
         ),

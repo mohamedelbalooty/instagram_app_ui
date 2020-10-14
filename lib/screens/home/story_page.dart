@@ -3,7 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:instagram/constants.dart';
 import 'package:instagram/features/models/stories.dart';
-import 'package:instagram/screens/home/home_screen.dart';
+import 'homeView.dart';
 
 class StoryPage extends StatefulWidget {
   static String id = 'StoryPage';
@@ -16,7 +16,7 @@ class _StoryPageState extends State<StoryPage> {
   @override
   void initState() {
     Timer(Duration(seconds: 3), () {
-      Navigator.pushNamed(context, HomeScreen.id);
+      Navigator.pushNamed(context, HomeView.id);
     });
     super.initState();
   }

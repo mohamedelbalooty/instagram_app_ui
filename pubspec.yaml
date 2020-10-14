@@ -12,6 +12,7 @@ dependencies:
 
   cupertino_icons: ^0.1.2
   gradient_text: ^1.0.2
+  image_picker: any
 
 dev_dependencies:
   flutter_test:
@@ -27,6 +28,7 @@ flutter:
    - assets/images/empty.png
    - assets/images/icons/
    - assets/images/search/
+   - assets/images/comments/
    - assets/images/posts/post1/
    - assets/images/posts/post2/
    - assets/images/posts/post3/

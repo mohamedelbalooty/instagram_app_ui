@@ -5,6 +5,8 @@ import 'package:instagram/widgets/home_widgets/profile_widgets/profile_info.dart
 import 'package:instagram/widgets/person_widgets/person_appBar.dart';
 import 'package:instagram/widgets/person_widgets/person_putton.dart';
 
+import 'person_settingScreen.dart';
+
 class PersonScreen extends StatefulWidget {
   @override
   _PersonScreenState createState() => _PersonScreenState();
@@ -39,6 +41,9 @@ class _PersonScreenState extends State<PersonScreen>
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     return Scaffold(
+      endDrawer: Drawer(
+        child: PersonSettingScreen(),
+      ),
       appBar: personAppBar(context),
       body: Column(
         children: <Widget>[
