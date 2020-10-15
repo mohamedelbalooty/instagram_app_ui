@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../../../constants.dart';
 
 Widget addStory() {
+
   return Padding(
     padding: EdgeInsets.symmetric(horizontal: 10.0),
     child: Container(

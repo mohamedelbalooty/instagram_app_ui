@@ -1,5 +1,7 @@
+import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:instagram/constants.dart';
 import 'package:instagram/features/controllerData/storyData.dart';
 import 'package:instagram/features/models/stories.dart';
@@ -31,10 +33,29 @@ class _StoryListState extends State<StoryList> {
         scrollDirection: Axis.horizontal,
         itemCount: _storyDataList.length,
         itemBuilder: (context, index) {
-          return index == 0 ? addStory() : _storyItem(index);
+          return index == 0 ?
+          GestureDetector(
+            onTap: (){
+              getImage();
+            },
+            child: addStory(),
+          ) : _storyItem(index);
         },
       ),
     );
+  }
+  File _image;
+  final picker = ImagePicker();
+
+  Future getImage() async{
+    final pickedFile = await picker.getImage(source: ImageSource.gallery);
+    setState(() {
+      if (pickedFile != null) {
+        _image = File(pickedFile.path);
+      } else {
+        print('No image selected.');
+      }
+    });
   }
 
   Widget _storyItem(int index) {
